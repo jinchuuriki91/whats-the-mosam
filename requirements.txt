@@ -1,0 +1,5 @@
+Django==2.1
+ipython>=7.1.1
+psycopg2>=2.7
+djangorestframework>=3.9.0
+django-filter>=2.0.0
