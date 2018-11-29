@@ -48,6 +48,14 @@ class MetricsBase(ModelBase):
         abstract = True
         ordering = ["record_date"]
 
+    @property
+    def year(self):
+        return self.record_date.year
+    
+    @property
+    def month(self):
+        return self.record_date.month
+
 
 class MaxTemperature(MetricsBase):
 
