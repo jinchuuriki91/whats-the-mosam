@@ -32,7 +32,8 @@ class MetricsHandler(APIView):
                 "location": location,
                 "start_date": start_date,
                 "end_date": end_date,
-                "results": results
+                "results": results,
+                "count": len(results)
             }
             return Response(resp, status=rest_status.HTTP_200_OK)
         except BadDataException as exc:

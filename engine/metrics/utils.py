@@ -40,7 +40,7 @@ def get_records(caller, region, type, start_date="", end_date=""):
             return MaxTempSerializer(MaxTemperature.objects.filter(**kwargs), many=True).data
         elif type == "Tmin":
             return MinTempSerializer(MinTemperature.objects.filter(**kwargs), many=True).data
-        elif type == "Tmax":
+        elif type == "Rainfall":
             return RainfallSerializer(Rainfall.objects.filter(**kwargs), many=True).data
         else:
             return [] 
