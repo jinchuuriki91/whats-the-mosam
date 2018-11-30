@@ -27,7 +27,7 @@ def get_records(caller, region, type, start_date="", end_date=""):
                 end_dt = check_date_format(end_date)
             except Exception:
                 raise BadDataException("Invalid end date format")
-        if start_dt > end_dt:
+        if start_dt and end_dt and start_dt > end_dt:
             raise BadDataException("Start date can't be greater than end date")
         
         kwargs = {"region": region, "is_active": True}

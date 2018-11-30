@@ -59,17 +59,23 @@ class MetricsBase(ModelBase):
 
 class MaxTemperature(MetricsBase):
 
+    UNIT = "DegC"
+    
     def __str__(self):
-        return "Tmax <%s:%s DegC> (%s)" % (REGION[self.region][1], self.value, self.record_date)
+        return "Tmax <%s:%s %s> (%s)" % (REGION[self.region][1], self.value, self.UNIT, self.record_date)
 
 
 class MinTemperature(MetricsBase):
 
+    UNIT = "DegC"
+
     def __str__(self):
-        return "Tmin <%s:%s DegC> (%s)" % (REGION[self.region][1], self.value, self.record_date)
+        return "Tmin <%s:%s %s> (%s)" % (REGION[self.region][1], self.value, self.UNIT, self.record_date)
 
 
 class Rainfall(MetricsBase):
 
+    UNIT = "mm"
+    
     def __str__(self):
-        return "Rainfall <%s:%s mm> (%s)" % (REGION[self.region][1], self.value, self.record_date)
+        return "Rainfall <%s:%s %s> (%s)" % (REGION[self.region][1], self.value, self.UNIT, self.record_date)
